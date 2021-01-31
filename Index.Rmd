@@ -53,14 +53,6 @@ grafikon <- tabela %>%
 ```
 
 
-## Početak
-
-<section>
-<a href="https://tixwitchy.shinyapps.io/Media_Funding_in_Serbia/">
-<img class="center" height="500" src="Masterteza.png"> </a>
-</section>
-
-
 ## Projekat Otvorenim podacima do kvalitetnijeg projektnog sufinansiranja medijskih sadržaja
 
 <section>
@@ -226,7 +218,7 @@ bci <-  ggplot (data = grafikon, aes (x = reorder(`PODNOSILAC PROJEKTA`, -`SREDS
         
         scale_y_continuous(name = "Sredstva od 2015-2020. u evrima", labels = comma)+
         
-        ggtitle (paste( "Pet podnosilaca\n koji su dobili najviše sredstava\n od organa/opštine", barchart[1,1],"\n"))+
+        ggtitle (paste( "Pet podnosilaca\n koji su dobili najviše sredstava\n od organa/opštine", grafikon[1,1],"\n"))+
         
         theme (legend.position = "none",
                
