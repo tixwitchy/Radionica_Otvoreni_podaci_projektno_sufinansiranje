@@ -255,10 +255,12 @@ bci <-  ggplot (data = grafikon, aes (x = reorder(`PODNOSILAC PROJEKTA`, -`SREDS
 
 ## Dodatni resursi
 
+- Linkovi za [Instalaciju R-a](http://cran.r-project.org) i [R studio-a](https://www.rstudio.com/products/rstudio/download/)
 - [Naučimo R kroz flexdashboards](https://tixwitchy.github.io/Dogs-of-New-York/Testhtmlpres.html#/)
 - [Uvod u R](https://tanjakec.github.io/blog/introduction-to-r/)
 - [Primer kombinovanja dashboards i shiny ]("https://tixwitchy.shinyapps.io/minority_media/")
 - [R-ladies Belgrade meetup page](https://www.meetup.com/rladies-belgrade/)
+
 
 
 ## Kontakt
