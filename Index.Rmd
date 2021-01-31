@@ -176,10 +176,10 @@ glimpse(tabela)
 
 ```{r,echo=FALSE,message=FALSE}
 
-tabelaAda<- tabela1 %>%
+tabelaorgan<- tabela1 %>%
   filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA` == organ )
 
-DT :: datatable (tabelaAda,rownames = FALSE, options = list(
+DT :: datatable (tabelaorgan,rownames = FALSE, options = list(
   bPaginate = TRUE, scrollX=T, lengthMenu=c(5,8), info= FALSE,initComplete = DT::JS(
     "function(settings, json) {",
     "$(this.api().table().container()).css({'font-size': '20px'});",
@@ -198,10 +198,10 @@ DT :: datatable (tabelaAda,rownames = FALSE, options = list(
 
 ```{r,echo=FALSE,message=FALSE}
 
-tabelaAdafin <- tabela %>%
+tabelaorganfin <- tabela %>%
   filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA` == organ)
 
-DT :: datatable (tabelaAdafin,rownames = FALSE, options = list(
+DT :: datatable (tabelaorganfin,rownames = FALSE, options = list(
   bPaginate = TRUE, scrollX=T, lengthMenu=c(5,8), info= FALSE,initComplete = DT::JS(
     "function(settings, json) {",
     "$(this.api().table().container()).css({'font-size': '15px'});",
@@ -219,7 +219,7 @@ bci <-  ggplot (data = grafikon, aes (x = reorder(`PODNOSILAC PROJEKTA`, -`SREDS
         
         scale_y_continuous(name = "Sredstva od 2015-2020. u evrima", labels = comma)+
         
-        ggtitle (paste( "Pet podnosilaca\n koji su dobili najviše sredstava\n od organa/opštine", grafikon[1,1],"\n"))+
+        ggtitle (paste( "Pet podnosilaca koji su dobili najviše sredstava\n od organa/opštine", grafikon[1,1],"koja je dodelila ukupno",format(sum(tabelaorganfin$`SREDSTVA U EVRIMA`),big.mark = ","),"evra"))+
         
         theme (legend.position = "none",
                
