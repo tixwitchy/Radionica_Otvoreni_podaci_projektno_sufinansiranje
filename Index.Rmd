@@ -16,22 +16,27 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
+
 library(plotly)
+
 library(scales)
+
 options(scipen = 999)
 
 tabela<- readxl::read_excel("Projektno sufinansiranje medijavezba.xlsx")
 
-tabela1 <-tabela%>%
-  select(-c(`MATIČNI BROJ GRADA/OPŠTINE`,`MATIČNI BROJ PODNOSIOCA`,`SREDSTVA U EVRIMA`))
+tabela1 <- tabela %>%
+  
+  select(-c(`MATIČNI BROJ GRADA/OPŠTINE`, `MATIČNI BROJ PODNOSIOCA`, `SREDSTVA U EVRIMA`))
+
 
 grafikon <- tabela %>%
   
-  group_by(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA`,`PODNOSILAC PROJEKTA`) %>%
+  group_by(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA`, `PODNOSILAC PROJEKTA`) %>%
   
   filter(`SREDSTVA U DINARIMA` != 0) %>%
   
-  filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA`=="Ada")%>%
+  filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA` == "Ada")%>%
   
    summarize(`SREDSTVA U EVRIMA` = sum(`SREDSTVA U EVRIMA`), n = n()) %>%
   
