@@ -133,7 +133,7 @@ grafikon <- tabela %>%
   </style>
 
 - Dataset ima ukupno **`r format(nrow(tabela),big.mark = ",")`** unosa i **`r ncol(tabela)`** kolona;
-- Obuhvatio je **`r n_distinct(tabela[,1])`** davaoca sredstava: Pokrajinski sekretarijat, Ministarstvo kulture i informisanja i **`r n_distinct(tabela[,1])-2`** lokalne samouprave;
+- Obuhvatio je **`r n_distinct(tabela[,1])`** davaoca sredstava: Pokrajinski sekretarijat, Ministarstvo kulture i informisanja i **`r n_distinct(tabela[,1])-2`** lokalne samouprave i **`r format(n_distinct(tabela[,4])-1,big.mark = ",")`** podnosioca projekata;
 - Na osnovu naziva projekta je opredeljeno **`r n_distinct(tabela[,8])`** tematskih celina a ukupan iznos sredstava u evrima je **`r format(sum(tabela[,10]),big.mark = ",")`**;
 
 ```{r, echo=FALSE}
