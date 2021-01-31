@@ -29,6 +29,7 @@ tabela1 <- tabela %>%
   
   select(-c(`MATIČNI BROJ GRADA/OPŠTINE`, `MATIČNI BROJ PODNOSIOCA`, `SREDSTVA U EVRIMA`))
 
+organ <- "Ada"
 
 grafikon <- tabela %>%
   
@@ -36,7 +37,7 @@ grafikon <- tabela %>%
   
   filter(`SREDSTVA U DINARIMA` != 0) %>%
   
-  filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA` == "Ada")%>%
+  filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA` == organ )%>%
   
    summarize(`SREDSTVA U EVRIMA` = sum(`SREDSTVA U EVRIMA`), n = n()) %>%
   
@@ -176,7 +177,7 @@ glimpse(tabela)
 ```{r,echo=FALSE,message=FALSE}
 
 tabelaAda<-tabela1%>%
-  filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA`=="Ada")
+  filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA`== organ )
 
 DT :: datatable (tabelaAda,rownames = FALSE, options = list(
   bPaginate = TRUE, scrollX=T, lengthMenu=c(5,8), info= FALSE,initComplete = DT::JS(
@@ -198,7 +199,7 @@ DT :: datatable (tabelaAda,rownames = FALSE, options = list(
 ```{r,echo=FALSE,message=FALSE}
 
 tabelaAdafin<-tabela%>%
-  filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA`=="Ada")
+  filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA`==organ)
 
 DT :: datatable (tabelaAdafin,rownames = FALSE, options = list(
   bPaginate = TRUE, scrollX=T, lengthMenu=c(5,8), info= FALSE,initComplete = DT::JS(
