@@ -94,7 +94,7 @@ grafikon <- tabela %>%
 
 - Pretraživost APR je  limitirana, kvalitet podataka za mašinsko učitavanje takođe.
 
-- Progutana slova, nepotrebni razmaci,znaci navoda (spas u [Open Refine-u](https://openrefine.org)).
+- Progutana slova, nepotrebni razmaci, znaci navoda (spas u [Open Refine-u](https://openrefine.org)).
 
 - Manjak vremena da se sve još jednom proveri. :)
 
@@ -133,8 +133,8 @@ grafikon <- tabela %>%
   </style>
 
 - Dataset ima ukupno **`r format(nrow(tabela),big.mark = ",")`** unosa i **`r ncol(tabela)`** kolona;
-- Obuhvatio je **`r n_distinct(tabela[,1])`** davaoca sredstava: Pokrajinski sekretarijat, Ministarstvo kulture i informisanja i **`r n_distinct(tabela[,1])-2`** lokalne samouprave i **`r format(n_distinct(tabela[,4])-1,big.mark = ",")`** podnosioca projekata;
-- Na osnovu naziva projekta je opredeljeno **`r n_distinct(tabela[,8])`** tematskih celina a ukupan iznos sredstava u evrima je **`r format(sum(tabela[,10]),big.mark = ",")`**;
+- Obuhvatio je **`r n_distinct(tabela[,1])`** davalaca sredstava: Pokrajinski sekretarijat, Ministarstvo kulture i informisanja i **`r n_distinct(tabela[,1])-2`** lokalne samouprave i **`r format(n_distinct(tabela[,4])-1,big.mark = ",")`** podnosilaca projekata;
+- Na osnovu naziva projekta je opredeljeno **`r n_distinct(tabela[,8])`** tematskih celina, a ukupan iznos sredstava u evrima je **`r format(sum(tabela[,10]),big.mark = ",")`**.
 
 ```{r, echo=FALSE}
 glimpse(tabela)
