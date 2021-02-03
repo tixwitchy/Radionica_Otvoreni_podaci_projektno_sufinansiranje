@@ -29,7 +29,7 @@ tabela1 <- tabela %>%
   
   select(-c(`MATIČNI BROJ GRADA/OPŠTINE`, `MATIČNI BROJ PODNOSIOCA`, `SREDSTVA U EVRIMA`))
 
-organ <- "Ada"
+organ <- "Tutin"
 
 grafikon <- tabela %>%
   
@@ -131,11 +131,10 @@ grafikon <- tabela %>%
     text-align: justify;
   }
   </style>
-
+  
 - Dataset ima ukupno **`r format(nrow(tabela),big.mark = ",")`** unosa i **`r ncol(tabela)`** kolona;
 - Obuhvatio je **`r n_distinct(tabela[,1])`** davalaca sredstava: Pokrajinski sekretarijat, Ministarstvo kulture i informisanja i **`r n_distinct(tabela[,1])-2`** lokalne samouprave i **`r format(n_distinct(tabela[,4])-1,big.mark = ",")`** podnosilaca projekata;
 - Na osnovu naziva projekta je opredeljeno **`r n_distinct(tabela[,8])`** tematskih celina, a ukupan iznos sredstava u evrima je **`r format(sum(tabela[,10]),big.mark = ",")`**.
-
 ```{r, echo=FALSE}
 glimpse(tabela)
 ```
@@ -180,7 +179,7 @@ tabelaorgan<- tabela1 %>%
   filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA` == organ )
 
 DT :: datatable (tabelaorgan,rownames = FALSE, options = list(
-  bPaginate = TRUE, scrollX=T, lengthMenu=c(5,8), info= FALSE,initComplete = DT::JS(
+  bPaginate = TRUE, scrollX=T, lengthMenu=c(3,5,8), info= FALSE,initComplete = DT::JS(
     "function(settings, json) {",
     "$(this.api().table().container()).css({'font-size': '20px'});",
     "}")))
@@ -202,7 +201,7 @@ tabelaorganfin <- tabela %>%
   filter(`ORGAN KOJI RASPISUJE KONKURS/OPŠTINA` == organ)
 
 DT :: datatable (tabelaorganfin,rownames = FALSE, options = list(
-  bPaginate = TRUE, scrollX=T, lengthMenu=c(5,8), info= FALSE,initComplete = DT::JS(
+  bPaginate = TRUE, scrollX=T, lengthMenu=c(3,5,8), info= FALSE,initComplete = DT::JS(
     "function(settings, json) {",
     "$(this.api().table().container()).css({'font-size': '15px'});",
     "}")))
